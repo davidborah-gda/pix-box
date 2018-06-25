@@ -1,0 +1,36 @@
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    background: skyblue;
+}
+
+.color-box {
+    width: 100%;
+    height: 50%;
+    background: red;
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;    
+}
+
+.back, .forward {
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: orange;
+    outline: none;
+}
+
+@media (max-width: 400px) {
+    .buttons {
+        flex-direction: column;
+    }
+}
