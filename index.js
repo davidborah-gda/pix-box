@@ -1,39 +1,33 @@
 const App = {
-    count: 0,
-    colors: ['red', 'green', 'blue'],
 
-    init(){
-      this.cacheDom();
-      this.bindEventListeners();
-      this.render();
-    },
-    cacheDom(){
-      this.root = document.querySelector('#app');
-      this.forwardBtn = this.root.querySelector('.forward');
-      this.backBtn = this.root.querySelector('.back');
-      this.display = this.root.querySelector('.color-box');
-    },
-    bindEventListeners(){
-      this.forwardBtn.addEventListener('click', this.goForward.bind(this));
-      this.backBtn.addEventListener('click', this.goBack.bind(this));
-    },
+    enlargeSrc:"",
 
-    goForward(){
-      this.count = (this.count + 1 + this.colors.length) % this.colors.length;
-      this.render();
+    init() {
+        this.cacheDom();
+        this.bindEventListeners();
+        this.render();
+    },
+    cacheDom() {
+        this.root = document.querySelector('#app');
+        this.selectors = this.root.querySelectorAll(".selection");
+        this.enlarge = this.root.querySelector(".dest");
+    },
+    bindEventListeners() {
+        this.selectors.forEach(element => {
+            element.addEventListener('click', this.selectIMG.bind(this));
+        });
     },
 
-    goBack(){
-      this.count = (this.count - 1 + this.colors.length) % this.colors.length;
-      this.render();
-
+    selectIMG(e) {
+       this.enlargeSrc = e.target.currentSrc;
+       this.render();
     },
 
-    render(){
-      this.display.style.backgroundColor = this.colors[this.count];
+    render() {
+        this.enlarge.src = this.enlargeSrc;
 
     }
-  };
-  
-  App.init();
-  window.App = App;
+};
+
+App.init();
+window.App = App;
