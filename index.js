@@ -10,7 +10,7 @@ const App = {
     cacheDom() {
         this.root = document.querySelector('#app');
         this.selectors = this.root.querySelectorAll(".selection");
-        this.enlarge = this.root.querySelector(".dest");
+        this.enlarge = this.root.querySelector(".destination");
     },
     bindEventListeners() {
         this.selectors.forEach(element => {
