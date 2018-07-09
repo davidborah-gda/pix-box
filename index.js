@@ -1,5 +1,5 @@
 const App = {
-  enlargeSrc: "",
+  enlargeSrc: "http://celebwallpapers.net/wp-content/uploads/2018/02/free-christmas-birds-wallpaper-best-of-cardinal-bird-wallpaper-of-free-christmas-birds-wallpaper-350x150.jpg",
 
   init() {
     this.cacheDom();
